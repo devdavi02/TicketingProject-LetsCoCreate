@@ -1,3 +1,5 @@
+const { criarEvento } = require('../models/evento.model');
+
 let eventos = [
   {
     id: "1",
@@ -11,13 +13,8 @@ function listarEventos() {
   return eventos;
 }
 
-function criarEvento({ nome, data, preco }) {
-  const novoEvento = {
-    id: Date.now().toString(),
-    nome,
-    data,
-    preco
-  };
+function criarEventoService(dados) {
+  const novoEvento = criarEvento(dados);
 
   eventos.push(novoEvento);
 
@@ -26,5 +23,5 @@ function criarEvento({ nome, data, preco }) {
 
 module.exports = {
   listarEventos,
-  criarEvento
+  criarEvento: criarEventoService
 };

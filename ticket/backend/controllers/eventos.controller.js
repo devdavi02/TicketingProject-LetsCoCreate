@@ -6,8 +6,12 @@ function listarEventos(req, res) {
 }
 
 function criarEvento(req, res) {
-  const novoEvento = eventosService.criarEvento(req.body);
-  res.status(201).json(novoEvento);
+  try {
+    const novoEvento = eventosService.criarEvento(req.body);
+    res.status(201).json(novoEvento);
+  } catch (error) {
+    res.status(400).json({ erro: error.message });
+  }
 }
 
 module.exports = {
