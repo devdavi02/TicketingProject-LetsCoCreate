@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ffb4ab",
+                    "on-secondary-container": "#00566b",
+                    "surface-container-highest": "#323538",
+                    "secondary": "#a6e6ff",
+                    "tertiary": "#c6c6c7",
+                    "background": "#111417",
+                    "outline": "#ab8980",
+                    "on-error": "#690005",
+                    "secondary-container": "#14d1ff",
+                    "inverse-surface": "#e1e2e7",
+                    "error-container": "#93000a",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-secondary": "#003543",
+                    "tertiary-fixed": "#e2e2e2",
+                    "tertiary-container": "#909191",
+                    "on-secondary-fixed": "#001f28",
+                    "on-primary-container": "#541200",
+                    "inverse-primary": "#b02f00",
+                    "on-background": "#e1e2e7",
+                    "surface-dim": "#111417",
+                    "surface-container-high": "#272a2e",
+                    "surface-bright": "#37393d",
+                    "secondary-fixed": "#b7eaff",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-primary": "#5f1500",
+                    "surface-container-lowest": "#0b0e11",
+                    "on-tertiary-container": "#282a2b",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "surface-tint": "#ffb5a0",
+                    "on-secondary-fixed-variant": "#004e60",
+                    "secondary-fixed-dim": "#4cd6ff",
+                    "primary-fixed-dim": "#ffb5a0",
+                    "on-surface-variant": "#e4beb4",
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#ff5722",
+                    "on-tertiary": "#2f3131",
+                    "surface-variant": "#323538",
+                    "outline-variant": "#5b4039",
+                    "on-primary-fixed-variant": "#862200",
+                    "primary": "#ffb5a0",
+                    "on-primary-fixed": "#3b0900",
+                    "surface-container-low": "#191c1f",
+                    "primary-fixed": "#ffdbd1",
+                    "on-surface": "#e1e2e7",
+                    "surface": "#111417",
+                    "inverse-on-surface": "#2e3134",
+                    "surface-container": "#1d2023"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "80px",
+                    "lg": "48px",
+                    "xs": "4px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "gutter": "16px",
+                    "margin": "20px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Inter"],
+                    "display": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-lg": ["14px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(17, 20, 23, 0.8);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-orange {
+            box-shadow: 0 0 20px rgba(255, 87, 34, 0.3);
+        }
+        .glow-blue {
+            box-shadow: 0 0 20px rgba(0, 209, 255, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-white">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b bg-zinc-950/80 backdrop-blur-xl border-white/10 shadow-none">
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-zinc-400 hover:bg-white/5 transition-colors p-2 rounded-full">arrow_back</button>
+<h1 class="text-xl font-black italic text-white tracking-tighter">SeatSavvy</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-zinc-400">notifications</span>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-white/10">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a professional man with a friendly expression in a modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHWB2-rYa9EWUlaUePJyc6BT2TaPjx-7ETPpKOIMeTJSHgvnHiKhV2M3J9vGCVJcDGPeEk9ZlYK4jCpkpRRGIFqeA_M7iFuHnnEro3XKSsPIZYgbVrxBTzKkd-kdeD9-aEt8ZEy1AWrMnisrAgZHX2uJUyEp08aGPtapE9_6r-xfnVGPWhcOGeUF3GPemRNohk87dYoHijSvLKtp8i9BAEnb1xDzi9R_l0nsNo2RjpmUshZbOUB58ka497HLaJjl6XM5VGH_qhPTGA"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-gutter max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Left Column: Checkout Options -->
+<div class="lg:col-span-7 space-y-md">
+<section class="space-y-sm">
+<h2 class="font-headline-md text-headline-md text-white">Método de Pagamento</h2>
+<p class="font-body-md text-body-md text-zinc-400">Escolha como deseja finalizar sua reserva segura.</p>
+</section>
+<!-- Payment Switcher -->
+<div class="grid grid-cols-2 gap-sm">
+<button class="flex flex-col items-center justify-center p-md rounded-xl glass-panel border-secondary-container/50 glow-blue transition-all">
+<span class="material-symbols-outlined text-secondary-container text-3xl mb-xs" style="font-variation-settings: 'FILL' 1;">qr_code_2</span>
+<span class="font-label-lg text-label-lg text-white">Pix</span>
+</button>
+<button class="flex flex-col items-center justify-center p-md rounded-xl glass-panel hover:border-white/20 transition-all">
+<span class="material-symbols-outlined text-zinc-400 text-3xl mb-xs">credit_card</span>
+<span class="font-label-lg text-label-lg text-zinc-400">Cartão</span>
+</button>
+</div>
+<!-- Payment Content: Pix Example -->
+<div class="glass-panel p-lg rounded-xl space-y-md">
+<div class="flex justify-between items-center border-b border-white/5 pb-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary-container">shield</span>
+<span class="font-label-lg text-label-lg text-white uppercase tracking-widest">Pagamento Instantâneo</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary-container">Expira em 10:00</span>
+</div>
+<div class="flex flex-col items-center gap-md py-md">
+<div class="bg-white p-4 rounded-xl shadow-2xl">
+<img class="w-48 h-48" data-alt="a clean high-contrast black and white qr code on a crisp white background for scanning" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsq7fkb5pA-83geUMnai79VcDm9hwsvTXIHz5zxwg2zW3SPbLvYIXnmTI-nBwyxousktBVCqvq8Q6XVAZIAYTzplBNHG-D8yUhOx6u_A17OVHl1dWw1nD2bpB_yxFGeLJGDYR1uU4G85nlzGxLFNN_2xEad51nLSK7xlE-QuQ1C9HZ9b5_IZe9SEWswiIcE-xh-W-apRiqHr-KNC2tAsaIw8UrNXJHZVhL50800D_FE1zKi6HTVJirz_Crc6-aqwNHFvbK2e0QoiT5"/>
+</div>
+<div class="text-center space-y-xs">
+<p class="font-label-lg text-label-lg text-white">Escaneie o código QR</p>
+<p class="font-body-md text-body-md text-zinc-400">Abra o app do seu banco e aponte a câmera</p>
+</div>
+<button class="w-full py-sm px-md border border-white/10 rounded-lg font-label-lg text-label-lg text-white hover:bg-white/5 transition-all flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-base">content_copy</span>
+                        Copiar código Pix
+                    </button>
+</div>
+</div>
+<!-- Card Info (Hidden Logic Implied) -->
+<div class="glass-panel p-lg rounded-xl space-y-md opacity-40">
+<h3 class="font-label-lg text-label-lg text-white">Dados do Cartão</h3>
+<div class="space-y-sm">
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-zinc-400">Nome no Cartão</label>
+<input class="w-full bg-surface-container-low border border-white/10 rounded-lg p-sm text-white focus:border-secondary-container outline-none transition-all" disabled="" placeholder="ALEX RIVERA" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-zinc-400">Número do Cartão</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border border-white/10 rounded-lg p-sm text-white outline-none" disabled="" placeholder="0000 0000 0000 0000" type="text"/>
+<span class="absolute right-3 top-3 material-symbols-outlined text-zinc-500">credit_card</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-zinc-400">Validade</label>
+<input class="w-full bg-surface-container-low border border-white/10 rounded-lg p-sm text-white outline-none" disabled="" placeholder="MM/AA" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-zinc-400">CVV</label>
+<input class="w-full bg-surface-container-low border border-white/10 rounded-lg p-sm text-white outline-none" disabled="" placeholder="123" type="text"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Order Summary -->
+<aside class="lg:col-span-5 space-y-md">
+<div class="glass-panel p-lg rounded-xl sticky top-24 space-y-md">
+<h2 class="font-headline-md text-headline-md text-white border-b border-white/5 pb-sm">Resumo do Pedido</h2>
+<!-- Event Details Card -->
+<div class="flex gap-md">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 border border-white/10">
+<img class="w-full h-full object-cover" data-alt="vibrant neon lit concert stage with a cheering crowd in silhouettes and dramatic laser lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0GAnyjUsS7od_rEGnYC7HEELEszQGWjQb6RhzF18jF2DNXn_Z9RUdeORyIJUQD6eKYvDyqccnWf6OhzdxhgT32R1fu96YZ_lgCXuRPm3YJvrk2crkF9if6EbWThu0h8xuVIohmH8Go39GNocybS56zoDS-gQbeAAQYWrufYwuRX48eYfBue8pPV2MQV0FCzUTTfnj5i9LieqxVYdB8lKA8ku7E511DqdV5Jj9QkU6F9YyahHntFLTn0zJXhpZuxp0VDEg3FqxTWrE"/>
+</div>
+<div class="space-y-xs">
+<p class="font-label-lg text-label-lg text-white">Electronic Genesis Tour</p>
+<div class="flex items-center gap-xs text-zinc-400">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span class="font-label-sm text-label-sm">24 Out, 2024</span>
+</div>
+<div class="flex items-center gap-xs text-zinc-400">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="font-label-sm text-label-sm">Neo Arena, SP</span>
+</div>
+</div>
+</div>
+<div class="space-y-sm pt-md border-t border-white/5">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-zinc-400">Ingresso VIP (x2)</span>
+<span class="font-label-lg text-label-lg text-white">R$ 840,00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-zinc-400">Taxa de Serviço</span>
+<span class="font-label-lg text-label-lg text-white">R$ 42,00</span>
+</div>
+<div class="flex justify-between items-center pt-sm border-t border-white/5">
+<span class="font-headline-md text-headline-md text-white">Total</span>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary-container">R$ 882,00</span>
+<p class="font-label-sm text-[10px] text-zinc-500 uppercase tracking-widest">Pagamento Seguro</p>
+</div>
+</div>
+</div>
+<button class="w-full py-md bg-primary-container text-white font-label-lg text-lg rounded-xl glow-orange active:scale-95 transition-all hover:brightness-110">
+                    Finalizar Compra - R$ 882,00
+                </button>
+<!-- Security Badge -->
+<div class="flex items-center justify-center gap-sm pt-sm opacity-60">
+<span class="material-symbols-outlined text-secondary-container text-xl" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-sm text-label-sm text-white">Proteção Anti-Fraude SeatSavvy</span>
+</div>
+</div>
+<!-- Bento Info Cards -->
+<div class="grid grid-cols-2 gap-sm">
+<div class="glass-panel p-md rounded-xl flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary">confirmation_number</span>
+<div>
+<p class="font-label-lg text-label-lg text-white">Digital-First</p>
+<p class="text-[11px] text-zinc-500 leading-tight">Ticket enviado direto para seu Hub.</p>
+</div>
+</div>
+<div class="glass-panel p-md rounded-xl flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary-container">refresh</span>
+<div>
+<p class="font-label-lg text-label-lg text-white">Reembolso</p>
+<p class="text-[11px] text-zinc-500 leading-tight">Garantido até 48h antes do evento.</p>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- NavigationDrawer (Contextual Mobile/Web Sidebar Logic) -->
+<nav class="hidden md:flex fixed left-0 top-16 h-[calc(100vh-64px)] w-20 flex-col py-8 items-center gap-8 bg-zinc-950 border-r border-white/10 transition-all hover:w-64 group z-40">
+<div class="flex items-center gap-4 w-full px-6">
+<span class="material-symbols-outlined text-orange-500 font-bold">account_balance_wallet</span>
+<span class="font-label-lg text-label-lg text-zinc-400 group-hover:block hidden whitespace-nowrap">Wallet Connect</span>
+</div>
+<div class="flex items-center gap-4 w-full px-6 bg-orange-500/10 text-orange-500 border-l-4 border-orange-500 py-2">
+<span class="material-symbols-outlined">history</span>
+<span class="font-label-lg text-label-lg group-hover:block hidden whitespace-nowrap">Order History</span>
+</div>
+<div class="flex items-center gap-4 w-full px-6 hover:translate-x-1 transition-transform">
+<span class="material-symbols-outlined text-zinc-400">swap_horiz</span>
+<span class="font-label-lg text-label-lg text-zinc-400 group-hover:block hidden whitespace-nowrap">Organizer Mode</span>
+</div>
+<div class="mt-auto flex items-center gap-4 w-full px-6 hover:translate-x-1 transition-transform">
+<span class="material-symbols-outlined text-zinc-400">settings</span>
+<span class="font-label-lg text-label-lg text-zinc-400 group-hover:block hidden whitespace-nowrap">Settings</span>
+</div>
+</nav>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full h-20 bg-zinc-950/90 backdrop-blur-2xl flex justify-around items-center px-4 pb-safe border-t border-white/5 rounded-t-3xl z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<button class="flex flex-col items-center justify-center text-zinc-500 hover:text-white transition-all">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-cyan-400 drop-shadow-[0_0_8px_rgba(0,209,255,0.5)] scale-110 duration-300 ease-out">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Tickets</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-500 hover:text-white transition-all">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Scanner</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-500 hover:text-white transition-all">
+<span class="material-symbols-outlined">dashboard_customize</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Hub</span>
+</button>
+</nav>
+</body></html>

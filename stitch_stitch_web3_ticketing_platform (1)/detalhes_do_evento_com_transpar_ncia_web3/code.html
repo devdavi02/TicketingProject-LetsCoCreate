@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Access Premium - Rastreio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-container": "#ff5722",
+                        "primary-fixed": "#ffdbd1",
+                        "on-secondary": "#003543",
+                        "surface-container-highest": "#323538",
+                        "surface-container": "#1d2023",
+                        "surface": "#111417",
+                        "on-secondary-fixed": "#001f28",
+                        "on-primary": "#5f1500",
+                        "tertiary": "#c6c6c7",
+                        "tertiary-container": "#909191",
+                        "surface-variant": "#323538",
+                        "inverse-surface": "#e1e2e7",
+                        "background": "#111417",
+                        "on-background": "#e1e2e7",
+                        "primary": "#ffb5a0",
+                        "inverse-on-surface": "#2e3134",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "outline": "#ab8980",
+                        "surface-container-low": "#191c1f",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#3b0900",
+                        "outline-variant": "#5b4039",
+                        "surface-container-lowest": "#0b0e11",
+                        "secondary-fixed-dim": "#4cd6ff",
+                        "on-surface-variant": "#e4beb4",
+                        "surface-bright": "#37393d",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-background": "#e1e2e7",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#14d1ff",
+                        "inverse-primary": "#b02f00",
+                        "secondary-fixed": "#b7eaff",
+                        "secondary": "#a6e6ff",
+                        "on-primary-container": "#541200",
+                        "on-primary-fixed-variant": "#862200",
+                        "surface-tint": "#ffb5a0",
+                        "on-tertiary-container": "#282a2b",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "surface-container-high": "#272a2e",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#111417",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#004e60",
+                        "on-tertiary": "#2f3131",
+                        "on-secondary-container": "#00566b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "md": "24px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "gutter": "16px",
+                        "xl": "80px",
+                        "margin": "20px",
+                        "lg": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-lg": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(44, 47, 51, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-secondary {
+            box-shadow: 0 0 20px rgba(0, 209, 255, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased">
+<!-- Shared TopAppBar - Process View Header -->
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background dark group/design-root overflow-x-hidden">
+<div class="flex items-center bg-surface p-4 pb-2 justify-between sticky top-0 z-50">
+<div class="text-white flex size-12 shrink-0 items-center cursor-pointer" data-icon="ArrowLeft">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-white text-headline-md leading-tight flex-1 ml-4">Detalhes do Evento</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<div class="text-white" data-icon="Share">
+<span class="material-symbols-outlined">share</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Event Banner Section -->
+<div class="@container">
+<div class="@[480px]:px-4 @[480px]:py-3">
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-surface @[480px]:rounded-xl min-h-[218px]" data-alt="dramatic wide angle shot of a massive rock concert at night with bright orange and blue strobe lights and a cheering crowd in silhouette" style='background-image: linear-gradient(0deg, rgba(17,20,23,1) 0%, rgba(17,20,23,0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIpcvGTHK8IgNORrzEqJzi0ITJt61O7R3Id-r0YoQYdL7c6sAA9GiCsbJLtAn3Mosla0TqqkwpulaaM3rXtHqaFTVMkT8UME6X58Y20qLKUh6nmzTh9IiG8ZfI5AN1RRi9ELLzSfEtjqakvnW1Acsb2Lj_MFAp8Puyq90H2ZGxST9NEBazU4vjoYF_A3BsXxD66n7Fi71Q4wzvdWYG6D7cEmtgYU4PnkTgwVZ2gUoKBmrmPUB5XUZ3fgIEkrBsaknfAvGmmFIld1qB");'>
+</div>
+</div>
+</div>
+<h3 class="text-on-background text-headline-lg px-4 text-left pb-2 pt-5">Show de Rock Premium</h3>
+<p class="text-on-surface-variant text-body-md px-4 pb-3">25 de Outubro | Estádio Nacional | São Paulo</p>
+<!-- Tabs Navigation -->
+<div class="pb-3 sticky top-[64px] bg-background z-40">
+<div class="flex border-b border-outline-variant px-4 gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-on-surface-variant pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold tracking-[0.015em]">Detalhes</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary-container text-white pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold tracking-[0.015em]">Rastreio</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-on-surface-variant pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold tracking-[0.015em]">Agenda</p>
+</a>
+</div>
+</div>
+<!-- Rastreio e Transparência Section -->
+<div class="px-margin py-md space-y-md">
+<h4 class="text-headline-md text-white">Rastreio e Transparência</h4>
+<!-- Smart Contract Verification -->
+<div class="glass-card p-4 rounded-xl flex items-center gap-4 glow-secondary">
+<div class="bg-secondary-container/20 p-3 rounded-full">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex-1">
+<p class="text-label-lg text-white">Autenticidade Garantida</p>
+<p class="text-label-sm text-on-surface-variant font-mono truncate">Smart Contract: 0x71C...4f92</p>
+</div>
+<div class="text-secondary cursor-pointer" data-icon="open_in_new">
+<span class="material-symbols-outlined">open_in_new</span>
+</div>
+</div>
+<!-- Ticket History Timeline -->
+<div class="space-y-sm">
+<p class="text-label-lg text-white uppercase tracking-wider">Histórico do Ingresso</p>
+<div class="relative ml-2 border-l-2 border-outline-variant pl-6 space-y-8">
+<!-- Current Status -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 size-4 rounded-full bg-secondary border-4 border-surface"></div>
+<div>
+<p class="text-white font-bold">Propriedade Atual</p>
+<p class="text-body-md text-on-surface-variant">Alex Rivera</p>
+<p class="text-label-sm text-secondary">Verificado em 12/10/2023</p>
+</div>
+</div>
+<!-- Past Transfer -->
+<div class="relative opacity-60">
+<div class="absolute -left-[31px] top-1 size-4 rounded-full bg-outline-variant border-4 border-surface"></div>
+<div>
+<p class="text-white font-semibold">Transferido de Mercado Secundário</p>
+<p class="text-body-md text-on-surface-variant">Lote Original #402</p>
+<p class="text-label-sm">10/10/2023</p>
+</div>
+</div>
+<!-- Minting -->
+<div class="relative opacity-60">
+<div class="absolute -left-[31px] top-1 size-4 rounded-full bg-outline-variant border-4 border-surface"></div>
+<div>
+<p class="text-white font-semibold">Cunhagem do Ingresso (Mint)</p>
+<p class="text-body-md text-on-surface-variant">Digital Access Platform</p>
+<p class="text-label-sm">01/09/2023</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Market Rules -->
+<div class="bg-surface-container-high p-md rounded-xl space-y-sm border border-outline-variant/30">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary" data-icon="shield">shield</span>
+<p class="text-headline-md text-white">Revenda Protegida</p>
+</div>
+<p class="text-on-surface-variant text-body-md mb-4">Este evento possui regras automáticas para combater o cambismo e garantir preços justos.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-3 rounded-lg">
+<p class="text-label-sm text-on-surface-variant uppercase">Teto de Preço</p>
+<p class="text-headline-md text-white">+50%</p>
+<p class="text-label-sm text-primary">Preço Máximo</p>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg">
+<p class="text-label-sm text-on-surface-variant uppercase">Royalties</p>
+<p class="text-headline-md text-white">10%</p>
+<p class="text-label-sm text-secondary">Para o Organizador</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Event Description & Tickets -->
+<div class="px-margin py-base space-y-md">
+<h4 class="text-headline-md text-white">Sobre o Evento</h4>
+<p class="text-body-md text-on-surface-variant">
+                Uma experiência imersiva com as maiores lendas do rock nacional. O Estádio Nacional se transforma em um templo da música com tecnologia de som de última geração e acesso exclusivo via blockchain para total segurança dos fãs.
+            </p>
+<div class="space-y-sm">
+<p class="text-label-lg text-white uppercase tracking-wider">Setores Disponíveis</p>
+<div class="flex items-center justify-between glass-card p-4 rounded-xl border-l-4 border-primary-container">
+<div>
+<p class="text-white font-bold">Pista Premium</p>
+<p class="text-label-sm text-on-surface-variant">Acesso frontal e bar exclusivo</p>
+</div>
+<p class="text-white font-bold">R$ 450,00</p>
+</div>
+<div class="flex items-center justify-between glass-card p-4 rounded-xl border-l-4 border-outline">
+<div>
+<p class="text-white font-bold">Cadeira Inferior</p>
+<p class="text-label-sm text-on-surface-variant">Visão panorâmica</p>
+</div>
+<p class="text-white font-bold">R$ 220,00</p>
+</div>
+</div>
+</div>
+<!-- Floating Bottom Action -->
+<div class="fixed bottom-0 left-0 w-full p-4 bg-surface/80 backdrop-blur-md border-t border-outline-variant z-50">
+<div class="max-w-screen-xl mx-auto flex items-center justify-between gap-4">
+<div class="flex flex-col">
+<p class="text-label-sm text-on-surface-variant">Total a partir de</p>
+<p class="text-headline-md text-white font-bold">R$ 220,00</p>
+</div>
+<button class="flex-1 max-w-[240px] bg-primary-container text-white h-14 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                    Comprar Agora
+                </button>
+</div>
+</div>
+<!-- Spacer for bottom button -->
+<div class="h-32 bg-background"></div>
+</div>
+</body></html>

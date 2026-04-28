@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "primary-container": "#ff5722",
+                        "surface-container": "#1d2023",
+                        "surface-container-lowest": "#0b0e11",
+                        "background": "#111417",
+                        "on-primary-fixed": "#3b0900",
+                        "surface-container-highest": "#323538",
+                        "primary": "#ffb5a0",
+                        "on-secondary-container": "#00566b",
+                        "outline": "#ab8980",
+                        "tertiary-container": "#909191",
+                        "on-primary": "#5f1500",
+                        "surface-bright": "#37393d",
+                        "on-primary-fixed-variant": "#862200",
+                        "secondary-container": "#14d1ff",
+                        "secondary-fixed": "#b7eaff",
+                        "on-background": "#e1e2e7",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "on-tertiary-container": "#282a2b",
+                        "surface-container-high": "#272a2e",
+                        "on-secondary": "#003543",
+                        "surface": "#111417",
+                        "secondary": "#a6e6ff",
+                        "surface-tint": "#ffb5a0",
+                        "on-primary-container": "#541200",
+                        "outline-variant": "#5b4039",
+                        "inverse-surface": "#e1e2e7",
+                        "surface-container-low": "#191c1f",
+                        "on-secondary-fixed": "#001f28",
+                        "secondary-fixed-dim": "#4cd6ff",
+                        "surface-variant": "#323538",
+                        "on-surface": "#e1e2e7",
+                        "inverse-on-surface": "#2e3134",
+                        "on-surface-variant": "#e4beb4",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffdbd1",
+                        "on-secondary-fixed-variant": "#004e60",
+                        "surface-dim": "#111417",
+                        "tertiary": "#c6c6c7",
+                        "inverse-primary": "#b02f00",
+                        "on-tertiary": "#2f3131"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin": "20px",
+                        "sm": "12px",
+                        "xl": "80px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(30, 30, 30, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .trending-card-gradient {
+            background: linear-gradient(180deg, rgba(17, 20, 23, 0) 0%, rgba(17, 20, 23, 0.9) 100%);
+        }
+        .orange-glow {
+            box-shadow: 0 0 20px rgba(255, 87, 34, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<header class="sticky top-0 w-full z-50 border-b border-white/10 bg-black/80 backdrop-blur-lg shadow-2xl shadow-orange-500/10">
+<div class="flex justify-between items-center px-5 h-16 w-full max-w-screen-xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-orange-500" data-icon="confirmation_number">confirmation_number</span>
+<h1 class="text-2xl font-black italic text-white tracking-tighter">SeatSavvy</h1>
+</div>
+<div class="w-10 h-10 rounded-full border border-white/20 overflow-hidden">
+<img alt="User Profile" data-alt="Close up portrait of a young man with a slight smile in soft studio lighting against a clean neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCjTTFCRXptW2oCurbS6ihcGnNa-IemzRZk3bBW2K43wUEeTzYrnUnLAUcnQaDZGRo62IuuZxJFEAfUkA0vU4ilmGr7j9tEWcJVpMFByBcF6diFUQZFClRIpTP-4Rh89Ck2F5LYtixsIMP4qJSZxj2pwGov6ECOR9sDAyZubkUD9syFfhVAmUKLCClbtxsj8gF33lymbUEY0aP82vhpdBmefcmPPk41st74zvEoPT8rTfgQ9csDgMC_YzC5aQNm82M5AbE3L_pOvy4"/>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-screen-xl mx-auto px-margin pb-32">
+<section class="mt-lg">
+<div class="relative w-full max-w-2xl mx-auto">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-secondary-container focus:outline-none transition-all placeholder:text-neutral-500 font-label-lg" placeholder="Search Digital Tickets for events..." type="text"/>
+</div>
+</section>
+<section class="mt-8 overflow-x-auto flex gap-3 no-scrollbar pb-2">
+<button class="flex-shrink-0 px-6 py-2 rounded-full bg-primary-container text-on-primary-container font-label-lg">All Events</button>
+<button class="flex-shrink-0 px-6 py-2 rounded-full glass-panel text-on-background font-label-lg hover:bg-white/5 transition-colors">Concerts</button>
+<button class="flex-shrink-0 px-6 py-2 rounded-full glass-panel text-on-background font-label-lg hover:bg-white/5 transition-colors">Workshops</button>
+<button class="flex-shrink-0 px-6 py-2 rounded-full glass-panel text-on-background font-label-lg hover:bg-white/5 transition-colors">Parties</button>
+<button class="flex-shrink-0 px-6 py-2 rounded-full glass-panel text-on-background font-label-lg hover:bg-white/5 transition-colors">Sports</button>
+</section>
+<section class="mt-lg">
+<h2 class="font-headline-md text-headline-md mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container" data-icon="local_fire_department">local_fire_department</span>
+                Trending Events
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="relative aspect-[16/10] rounded-3xl overflow-hidden group cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Wide shot of a massive music festival stage at night with laser lights and a silhouetted crowd cheering" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJzXsBv8UabwEGKQg-NpnIue8v1s96l_zMJRbkYYI0CezJG_rUzFB46CJefeDlOa-VlGDe25nQFHhq3LK5cKEuyItVdmHgRTH8siriIl5yHwtsVZuI3cOgLtiRJYT3h1W_1PuixdDVSa2z7w7LQ-hyvujqT9-DxZthJt9Er0hpcJCvZTG6jYStE-UXKxq3tKYrGzay-N8lxh-nzpkbAZi3EF5z0oNlP_0Q6YVLgk4XJJnFkgBDKiiPKwddz4c_zWEk0KTp-jz8-iSW"/>
+<div class="absolute inset-0 trending-card-gradient"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 flex justify-between items-end">
+<div>
+<span class="bg-secondary-container text-on-secondary-fixed text-label-sm px-2 py-1 rounded mb-2 inline-block">LIVE CONCERT</span>
+<h3 class="font-headline-md text-white">Neon Pulse Festival</h3>
+<p class="text-neutral-300 font-label-sm">Rio de Janeiro • Nov 12</p>
+</div>
+<div class="text-right">
+<p class="text-secondary-container font-headline-md">R$ 299</p>
+<button class="mt-2 bg-primary-container text-white px-6 py-2 rounded-xl font-label-lg orange-glow active:scale-95 transition-all">Buy</button>
+</div>
+</div>
+</div>
+<div class="relative aspect-[16/10] rounded-3xl overflow-hidden group cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Interior of a modern high-end night club with vibrant purple and orange ambient lighting and motion blur of dancing people" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEg-pei9E5CJRbiFTzkig06OPnATVlxNXVtKEqRLanjoWohrSDFvVeclOLKk0CNLwQGUV8G7Y4mK8EIdpeRjlI0pVXLvBalTdu1IlsDtbIoMDHybT4x5qSM0TArRsfRov2w9dh4_FAW44_chjApOnhNUvu4H3fF5-PJMkP2KHlBnmGvlwUGAr5a73avz4MlVuNHNA8CTPGJV792H0fuC61NYPUBFoV3Ud5vGHbzcY4zyxHHju2BgL2yMlPFcY_eUQ-YuywUxlpk-Tu"/>
+<div class="absolute inset-0 trending-card-gradient"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 flex justify-between items-end">
+<div>
+<span class="bg-primary-container/20 text-primary text-label-sm px-2 py-1 rounded mb-2 inline-block">EXCLUSIVE PARTY</span>
+<h3 class="font-headline-md text-white">After Dark VIP</h3>
+<p class="text-neutral-300 font-label-sm">São Paulo • Nov 15</p>
+</div>
+<div class="text-right">
+<p class="text-secondary-container font-headline-md">R$ 150</p>
+<button class="mt-2 bg-primary-container text-white px-6 py-2 rounded-xl font-label-lg orange-glow active:scale-95 transition-all">Buy</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mt-lg">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-md text-headline-md">Upcoming Events</h2>
+<button class="text-secondary-container font-label-lg flex items-center gap-1">View All <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></button>
+</div>
+<div class="space-y-4">
+<div class="glass-panel rounded-2xl p-4 flex items-center gap-4 hover:bg-white/5 transition-colors cursor-pointer group">
+<div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Overhead view of people attending a tech workshop with laptops on tables and warm indoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcm0xFg6LkDastJimoPND5I92XrtS3GS2If60L57wBkkL_kMJoMq-MKZMvZ2ppBmm2Fi1kCB9txP0Gtc0iRhTtz6BwhlEco_M7Sfp0xxEuIRwp5DYSSecriUPzxMvm99Z_7jo4Mp53QiGFyvz6USVEN1VuhiF3KfsdylBSMCUkcPzDp1QH2QFnBi3Hh6gH9_5AYI42bBTF1lvV9bIobF1WJkNE-9feb7c-Mh44MhLGrqZkV8lncMiQxBML3eXM8FQwNzqslEkPNgRz"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-label-lg text-white group-hover:text-primary transition-colors">Web3 Strategy Workshop</h4>
+<div class="flex gap-4 mt-1">
+<span class="text-neutral-500 text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="calendar_today">calendar_today</span>
+                                Nov 20, 2023
+                            </span>
+<span class="text-neutral-500 text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+                                Curitiba
+                            </span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-white font-headline-md text-lg">R$ 89</p>
+<p class="text-secondary-container text-label-sm">12 Left</p>
+</div>
+</div>
+<div class="glass-panel rounded-2xl p-4 flex items-center gap-4 hover:bg-white/5 transition-colors cursor-pointer group">
+<div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Energetic concert crowd with hands raised towards a brightly lit stage with atmospheric smoke" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbbXdW1YZskD4exvWali0WYp663ea2uWuTnkwKBVK0trKvwQB7Uc06KPR3vI_LHwIF2YLF-V4tejCAIMTrjzf8PVP-6HjdBN8d-Pgdp1nyJExNfNqn-uovQUy7ic5NFolUHa-I2Tyyx0tDqHdPlmmmDYUuls-DDT2IwXrpOOrZLczEZojQyLCV19hyxYpb9jAdsTk775gw8jvt8sTLxSDVi5TMTxgiA-TjMVe4hVj-fxat5ABNk1ewlqtFQh9SBMxwkzdrcy1JA7D5"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-label-lg text-white group-hover:text-primary transition-colors">Samba Soul Night</h4>
+<div class="flex gap-4 mt-1">
+<span class="text-neutral-500 text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="calendar_today">calendar_today</span>
+                                Nov 22, 2023
+                            </span>
+<span class="text-neutral-500 text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+                                Salvador
+                            </span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-white font-headline-md text-lg">R$ 45</p>
+<p class="text-secondary-container text-label-sm">Selling fast</p>
+</div>
+</div>
+<div class="glass-panel rounded-2xl p-4 flex items-center gap-4 hover:bg-white/5 transition-colors cursor-pointer group">
+<div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Dynamic night photography of a DJ at a turntable with bright neon blue and pink lighting effects" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAykeU1KjUcAqiNzzdffbbjLU7ukwVGtVBtTdO6idDntcf26Duhe1TagC1_Rn3-D5eZJvsth2rDSrrQMAvo7FkI_wC8Y5AP63Q2Wsv4McRUi31reW34nnnoYWSe2TzyfC8ZK22kH9zHO95tbNTXcJ4X6tolM3N8hCQBfVhV4tvH-OZj-IPceJvDWhc_7VVj_vBigc_QBi0FTTf_B0R9em5FyHFzvQxS4pzY8Qkgy_QgIr6f3a8dr9Q8moGwM-yYcxKXmrxJRYRj6uTg"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-label-lg text-white group-hover:text-primary transition-colors">Electronic Underground</h4>
+<div class="flex gap-4 mt-1">
+<span class="text-neutral-500 text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="calendar_today">calendar_today</span>
+                                Dec 05, 2023
+                            </span>
+<span class="text-neutral-500 text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+                                Belo Horizonte
+                            </span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-white font-headline-md text-lg">R$ 120</p>
+<p class="text-neutral-500 text-label-sm">Upcoming</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 w-full z-50 border-t border-white/5 bg-neutral-900/90 backdrop-blur-2xl rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<div class="flex justify-around items-center h-20 pb-4 px-6">
+<a class="flex flex-col items-center justify-center text-cyan-400 drop-shadow-[0_0_8px_rgba(0,209,255,0.6)]" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="text-[10px] uppercase tracking-widest font-bold">Marketplace</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 hover:text-orange-400 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="text-[10px] uppercase tracking-widest font-bold">My Tickets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 hover:text-orange-400 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="text-[10px] uppercase tracking-widest font-bold">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

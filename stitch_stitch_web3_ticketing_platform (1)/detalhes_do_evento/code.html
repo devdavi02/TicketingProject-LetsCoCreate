@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ffb4ab",
+                    "on-secondary-container": "#00566b",
+                    "surface-container-highest": "#323538",
+                    "secondary": "#a6e6ff",
+                    "tertiary": "#c6c6c7",
+                    "background": "#111417",
+                    "outline": "#ab8980",
+                    "on-error": "#690005",
+                    "secondary-container": "#14d1ff",
+                    "inverse-surface": "#e1e2e7",
+                    "error-container": "#93000a",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-secondary": "#003543",
+                    "tertiary-fixed": "#e2e2e2",
+                    "tertiary-container": "#909191",
+                    "on-secondary-fixed": "#001f28",
+                    "on-primary-container": "#541200",
+                    "inverse-primary": "#b02f00",
+                    "on-background": "#e1e2e7",
+                    "surface-dim": "#111417",
+                    "surface-container-high": "#272a2e",
+                    "surface-bright": "#37393d",
+                    "secondary-fixed": "#b7eaff",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-primary": "#5f1500",
+                    "surface-container-lowest": "#0b0e11",
+                    "on-tertiary-container": "#282a2b",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "surface-tint": "#ffb5a0",
+                    "on-secondary-fixed-variant": "#004e60",
+                    "secondary-fixed-dim": "#4cd6ff",
+                    "primary-fixed-dim": "#ffb5a0",
+                    "on-surface-variant": "#e4beb4",
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#ff5722",
+                    "on-tertiary": "#2f3131",
+                    "surface-variant": "#323538",
+                    "outline-variant": "#5b4039",
+                    "on-primary-fixed-variant": "#862200",
+                    "primary": "#ffb5a0",
+                    "on-primary-fixed": "#3b0900",
+                    "surface-container-low": "#191c1f",
+                    "primary-fixed": "#ffdbd1",
+                    "on-surface": "#e1e2e7",
+                    "surface": "#111417",
+                    "inverse-on-surface": "#2e3134",
+                    "surface-container": "#1d2023"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "80px",
+                    "lg": "48px",
+                    "xs": "4px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "gutter": "16px",
+                    "margin": "20px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Inter"],
+                    "display": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-lg": ["14px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(17, 20, 23, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-glow-orange {
+            text-shadow: 0 0 12px rgba(255, 87, 34, 0.4);
+        }
+        .text-glow-cyan {
+            text-shadow: 0 0 12px rgba(0, 209, 255, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md selection:bg-primary-container selection:text-white">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b bg-zinc-950/80 backdrop-blur-xl border-white/10 shadow-none h-16">
+<div class="flex justify-between items-center px-6 h-full w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-white/10">
+<img alt="user profile picture" class="w-full h-full object-cover" data-alt="close up portrait of a smiling young professional man with short dark hair in high-key studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcVVBMvahatQsx57pW8mxaRQmgjenxjjW2q1qpr2vRjOLF9lUtOyniN0akek_rn7SDAWVhECNNSRqt8KInYhF9I5H37FEYHfmTbX6w5GOr85GxO8OOJWYEKrbwcV4NI1hj_ideFy_FM0fRm-PSjszXbAAFgT5PFS5sCtTyInryavkrxY88eFVPXXRUmfRnS7IHhXGzwDqr4Q82ez0D-D4wk-kdyy1NvCBr1TmAjf-9gA8LmONOzst6q5KuuPAQSiVcuqnTsZlGInqb"/>
+</div>
+<span class="text-xl font-black italic text-white tracking-tighter font-sans font-semibold tracking-tight">SeatSavvy</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-zinc-400">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pb-32 pt-16">
+<!-- Hero Section -->
+<section class="relative w-full aspect-[4/5] md:aspect-video overflow-hidden">
+<img alt="Event Cover Image" class="w-full h-full object-cover" data-alt="cinematic shot of a massive music festival stage with vibrant laser lights and smoke at night with cheering crowd silhouettes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD37ADvVSzQ_Gc8DBAXcNrQbfL5WPdQH_IpHDOnTCfi_tnO8tN2EO7sZCO9FAKhZFah_KWmYWccyPKGLVOE7nakMBa0TRSRukrhjy1sUPHKWyDPuRs78l9yiWHR5iTWiwl0q9_lGnK74JHOeOef-hK6ywl0ucOqf98vx81IUsMAaySnzmyELyQroJ0tqTMJparGdI7oFJM073_9t_t3WBAfipAYoINlN_RiCzX0j8WmPQJXjGGrOgZxFSlJsypIUhDe0nfguZpzwRsj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container/20 border border-secondary-container/30 rounded-full backdrop-blur-md">
+<span class="material-symbols-outlined text-secondary-container text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-label-sm font-label-sm text-secondary-container uppercase tracking-widest">NFT Protegido</span>
+</div>
+<h1 class="font-display text-display text-white leading-tight">Afterworld: Neon Genesis 2024</h1>
+<div class="flex flex-wrap gap-4 text-zinc-400">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">calendar_today</span>
+<span class="font-label-lg text-label-lg">14 Outubro, 2024</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">location_on</span>
+<span class="font-label-lg text-label-lg">Arena Digital, São Paulo</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Content Section -->
+<section class="px-6 mt-8 space-y-8 max-w-7xl mx-auto">
+<!-- Event Description -->
+<div class="space-y-4">
+<h2 class="font-headline-md text-headline-md text-white">Sobre o Evento</h2>
+<p class="font-body-lg text-body-lg text-zinc-400 leading-relaxed max-w-2xl">
+                    Prepare-se para a maior experiência sensorial da década. Afterworld traz uma fusão imersiva de música eletrônica, arte digital e tecnologia blockchain, garantindo uma noite inesquecível e ingressos 100% autênticos via SeatSavvy.
+                </p>
+</div>
+<!-- Ticket Selection -->
+<div class="space-y-4">
+<h2 class="font-headline-md text-headline-md text-white">Escolha seu Ingresso</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Pista -->
+<label class="relative group cursor-pointer">
+<input checked="" class="peer sr-only" name="ticket_type" type="radio"/>
+<div class="glass-panel p-6 rounded-2xl border-white/5 peer-checked:border-primary-container peer-checked:bg-primary-container/5 transition-all duration-300">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-white">Pista</h3>
+<p class="text-label-sm font-label-sm text-zinc-500 mt-1">Acesso à arena principal</p>
+</div>
+<div class="text-right">
+<div class="text-primary-container font-headline-md text-headline-md">R$ 180</div>
+<div class="text-label-sm font-label-sm text-zinc-500">+ taxas</div>
+</div>
+</div>
+</div>
+<div class="absolute top-4 right-4 opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+</div>
+</label>
+<!-- VIP -->
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="ticket_type" type="radio"/>
+<div class="glass-panel p-6 rounded-2xl border-white/5 peer-checked:border-secondary-container peer-checked:bg-secondary-container/5 transition-all duration-300">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-white">VIP Lounge</h3>
+<p class="text-label-sm font-label-sm text-zinc-500 mt-1">Open bar &amp; Vista exclusiva</p>
+</div>
+<div class="text-right">
+<div class="text-secondary-container font-headline-md text-headline-md">R$ 450</div>
+<div class="text-label-sm font-label-sm text-zinc-500">+ taxas</div>
+</div>
+</div>
+</div>
+<div class="absolute top-4 right-4 opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Perks / Highlights Bento -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4 py-4">
+<div class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">confirmation_number</span>
+<span class="text-label-sm font-label-sm uppercase tracking-tighter">100% Digital</span>
+</div>
+<div class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center gap-2">
+<span class="material-symbols-outlined text-secondary text-3xl">security</span>
+<span class="text-label-sm font-label-sm uppercase tracking-tighter">Safe Resale</span>
+</div>
+<div class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center gap-2 col-span-2 md:col-span-1">
+<span class="material-symbols-outlined text-tertiary text-3xl">token</span>
+<span class="text-label-sm font-label-sm uppercase tracking-tighter">Collectable NFT</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Fixed Footer Action -->
+<div class="fixed bottom-0 left-0 w-full z-50 px-6 py-6 bg-zinc-950/90 backdrop-blur-2xl border-t border-white/5">
+<div class="max-w-7xl mx-auto flex items-center justify-between gap-6">
+<div class="hidden md:block">
+<span class="text-zinc-500 text-label-sm font-label-sm block">Total estimado</span>
+<span class="text-white font-headline-md text-headline-md">R$ 180,00</span>
+</div>
+<button class="flex-1 md:max-w-xs h-14 bg-primary-container text-white font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-3 active:scale-95 transition-transform shadow-[0_8px_32px_rgba(255,87,34,0.3)]">
+<span class="material-symbols-outlined">shopping_cart</span>
+                Comprar Agora
+            </button>
+</div>
+</div>
+<!-- Navigation suppression: As per UX Goal for transactional/focused pages -->
+</body></html>

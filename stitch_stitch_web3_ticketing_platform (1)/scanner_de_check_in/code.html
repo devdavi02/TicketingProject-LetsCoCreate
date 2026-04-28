@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "error": "#ffb4ab",
+                "on-secondary-container": "#00566b",
+                "surface-container-highest": "#323538",
+                "secondary": "#a6e6ff",
+                "tertiary": "#c6c6c7",
+                "background": "#111417",
+                "outline": "#ab8980",
+                "on-error": "#690005",
+                "secondary-container": "#14d1ff",
+                "inverse-surface": "#e1e2e7",
+                "error-container": "#93000a",
+                "tertiary-fixed-dim": "#c6c6c7",
+                "on-secondary": "#003543",
+                "tertiary-fixed": "#e2e2e2",
+                "tertiary-container": "#909191",
+                "on-secondary-fixed": "#001f28",
+                "on-primary-container": "#541200",
+                "inverse-primary": "#b02f00",
+                "on-background": "#e1e2e7",
+                "surface-dim": "#111417",
+                "surface-container-high": "#272a2e",
+                "surface-bright": "#37393d",
+                "secondary-fixed": "#b7eaff",
+                "on-tertiary-fixed": "#1a1c1c",
+                "on-primary": "#5f1500",
+                "surface-container-lowest": "#0b0e11",
+                "on-tertiary-container": "#282a2b",
+                "on-tertiary-fixed-variant": "#454747",
+                "surface-tint": "#ffb5a0",
+                "on-secondary-fixed-variant": "#004e60",
+                "secondary-fixed-dim": "#4cd6ff",
+                "primary-fixed-dim": "#ffb5a0",
+                "on-surface-variant": "#e4beb4",
+                "on-error-container": "#ffdad6",
+                "primary-container": "#ff5722",
+                "on-tertiary": "#2f3131",
+                "surface-variant": "#323538",
+                "outline-variant": "#5b4039",
+                "on-primary-fixed-variant": "#862200",
+                "primary": "#ffb5a0",
+                "on-primary-fixed": "#3b0900",
+                "surface-container-low": "#191c1f",
+                "primary-fixed": "#ffdbd1",
+                "on-surface": "#e1e2e7",
+                "surface": "#111417",
+                "inverse-on-surface": "#2e3134",
+                "surface-container": "#1d2023"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "xl": "80px",
+                "lg": "48px",
+                "xs": "4px",
+                "sm": "12px",
+                "md": "24px",
+                "gutter": "16px",
+                "margin": "20px",
+                "base": "8px"
+            },
+            "fontFamily": {
+                "label-lg": ["Inter"],
+                "display": ["Inter"],
+                "label-sm": ["Inter"],
+                "body-md": ["Inter"],
+                "headline-lg": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-md": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scanner-viewfinder {
+            box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.7);
+        }
+        .scan-line {
+            height: 2px;
+            background: #00D1FF;
+            box-shadow: 0 0 15px #00D1FF;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md overflow-hidden">
+<!-- TopAppBar -->
+<nav class="bg-zinc-950/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/10">
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a professional man in a tech environment, sharp focus, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5FQHOhbKTWJ4orTOAmo4eVkyFSeXnjSydpPoRZ5-Us0evCrSm9IBK4ZVGhtvMxCpBQJJDtw1uNArWVLUatCeMWWNo3CTZ2746wmGAB_eKbMqcFlZ725ZeEPqwGxpqOHHjLSY3OJOje-bpOiiWbQbB3VrRXu98WiT99KTHaPbimU-87SqBHsFblxUpjHTs3-AKZPIhbZFRTUXd_w63aNMPhUXm9t-ZbHiUY55dNXWNreIuTaUozzAJlSXAyAzkuckAg4wvLiBbyTbh"/>
+</div>
+<span class="text-xl font-black italic text-white tracking-tighter">SeatSavvy</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-zinc-400">notifications</span>
+</div>
+</div>
+</nav>
+<!-- Main Scanner Canvas -->
+<main class="relative h-screen w-full flex flex-col items-center justify-center pt-16 pb-20">
+<!-- Live Camera Feed Simulation -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale-[0.2]" data-alt="Concert crowd in a dimly lit arena with colorful stage lights and atmospheric smoke, dark mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoqrV5XhfrYsYoLGkGpeIJXJsaOxBmm2QzhaQG6S9dlU-tgyGfQ9CjdgmUI6MidE9LFuy5dkLUBiI1CrzzP1glFy5HccPUy2bjRVMqX5ivbnpHMfB3j44j7g_qlFJNfw-HPJ6Zjg8V9anI1k2KbxdYXMizYiPo1oYXksrxM5RRnKOTLO68gLpHc9SNmXqPeCcFEirgXiNMnK5JFsT7KxkcT3pep0do8BKdsX7odSu3MsN8pXPRJl_7vno_2P8Yy24cRqDnSYnXrsVE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<!-- Scanner Overlay -->
+<div class="relative z-10 w-full max-w-sm px-gutter flex flex-col items-center">
+<!-- Scanning Frame -->
+<div class="relative w-64 h-64 md:w-80 md:h-80">
+<!-- Corner Borders -->
+<div class="absolute top-0 left-0 w-12 h-12 border-t-4 border-l-4 border-secondary-container rounded-tl-xl"></div>
+<div class="absolute top-0 right-0 w-12 h-12 border-t-4 border-r-4 border-secondary-container rounded-tr-xl"></div>
+<div class="absolute bottom-0 left-0 w-12 h-12 border-b-4 border-l-4 border-secondary-container rounded-bl-xl"></div>
+<div class="absolute bottom-0 right-0 w-12 h-12 border-b-4 border-r-4 border-secondary-container rounded-br-xl"></div>
+<!-- Viewfinder Mask -->
+<div class="scanner-viewfinder absolute inset-0 rounded-xl overflow-hidden pointer-events-none">
+<div class="scan-line absolute top-1/2 left-0 w-full"></div>
+</div>
+<!-- Floating Feedback Overlay (Hidden by default, shown for UI demonstration) -->
+<!-- Success State Placeholder -->
+<div class="absolute inset-0 flex items-center justify-center bg-green-500/20 backdrop-blur-sm rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300">
+<div class="bg-green-500 text-white rounded-full p-4 shadow-lg scale-110">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Controls -->
+<div class="mt-lg flex gap-md items-center">
+<button class="w-14 h-14 rounded-full bg-zinc-950/60 backdrop-blur-md border border-white/10 flex items-center justify-center text-on-background hover:bg-white/10 transition-all active:scale-90">
+<span class="material-symbols-outlined text-2xl">flashlight_on</span>
+</button>
+<button class="px-md py-sm bg-primary-container text-white rounded-full flex items-center gap-base font-label-lg shadow-lg active:scale-95 transition-all">
+<span class="material-symbols-outlined text-xl">qr_code_scanner</span>
+<span>ALINHAR QR CODE</span>
+</button>
+<button class="w-14 h-14 rounded-full bg-zinc-950/60 backdrop-blur-md border border-white/10 flex items-center justify-center text-on-background hover:bg-white/10 transition-all active:scale-90">
+<span class="material-symbols-outlined text-2xl">sync</span>
+</button>
+</div>
+</div>
+<!-- Recent Logs (Bento Style Sheet) -->
+<div class="absolute bottom-24 left-1/2 -translate-x-1/2 w-full max-w-2xl px-gutter z-20">
+<div class="bg-zinc-950/90 backdrop-blur-2xl border border-white/5 rounded-3xl p-md shadow-2xl">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-md text-on-background flex items-center gap-sm">
+<span class="material-symbols-outlined text-cyan-400">history</span>
+                        Entradas Recentes
+                    </h3>
+<span class="text-label-sm text-zinc-500 uppercase tracking-widest">Total: 482/1200</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<!-- Log Item: Valid -->
+<div class="flex items-center gap-md p-sm rounded-xl bg-white/5 border border-white/5">
+<div class="w-10 h-10 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center">
+<span class="material-symbols-outlined">check</span>
+</div>
+<div class="flex-1">
+<p class="font-label-lg text-white">Roberto Santos</p>
+<p class="text-[10px] text-zinc-500 uppercase tracking-tighter">Setor VIP • 14:32</p>
+</div>
+<div class="text-right">
+<span class="text-[10px] bg-green-500/10 text-green-400 px-xs py-1 rounded-full font-bold">VÁLIDO</span>
+</div>
+</div>
+<!-- Log Item: Error -->
+<div class="flex items-center gap-md p-sm rounded-xl bg-white/5 border border-white/5 opacity-80">
+<div class="w-10 h-10 rounded-full bg-error-container/20 text-error flex items-center justify-center">
+<span class="material-symbols-outlined">close</span>
+</div>
+<div class="flex-1">
+<p class="font-label-lg text-white">Carla Mendez</p>
+<p class="text-[10px] text-zinc-500 uppercase tracking-tighter">Pista Comum • 14:31</p>
+</div>
+<div class="text-right">
+<span class="text-[10px] bg-error-container/20 text-error px-xs py-1 rounded-full font-bold text-nowrap">JÁ UTILIZADO</span>
+</div>
+</div>
+<!-- Log Item: Valid -->
+<div class="hidden md:flex items-center gap-md p-sm rounded-xl bg-white/5 border border-white/5">
+<div class="w-10 h-10 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center">
+<span class="material-symbols-outlined">check</span>
+</div>
+<div class="flex-1">
+<p class="font-label-lg text-white">Henrique Oliver</p>
+<p class="text-[10px] text-zinc-500 uppercase tracking-tighter">Camarote 04 • 14:28</p>
+</div>
+<div class="text-right">
+<span class="text-[10px] bg-green-500/10 text-green-400 px-xs py-1 rounded-full font-bold">VÁLIDO</span>
+</div>
+</div>
+<!-- Log Item: Valid -->
+<div class="hidden md:flex items-center gap-md p-sm rounded-xl bg-white/5 border border-white/5">
+<div class="w-10 h-10 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center">
+<span class="material-symbols-outlined">check</span>
+</div>
+<div class="flex-1">
+<p class="font-label-lg text-white">Julia Braga</p>
+<p class="text-[10px] text-zinc-500 uppercase tracking-tighter">Pista Comum • 14:25</p>
+</div>
+<div class="text-right">
+<span class="text-[10px] bg-green-500/10 text-green-400 px-xs py-1 rounded-full font-bold">VÁLIDO</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 bg-zinc-950/90 backdrop-blur-2xl border-t border-white/5 rounded-t-3xl z-50 flex justify-around items-center px-4 pb-safe shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-white transition-all active:scale-110" href="#">
+<span class="material-symbols-outlined text-2xl">explore</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-white transition-all active:scale-110" href="#">
+<span class="material-symbols-outlined text-2xl">confirmation_number</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Tickets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-cyan-400 drop-shadow-[0_0_8px_rgba(0,209,255,0.5)] active:scale-110 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined text-2xl">qr_code_scanner</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Scanner</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-white transition-all active:scale-110" href="#">
+<span class="material-symbols-outlined text-2xl">dashboard_customize</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Hub</span>
+</a>
+</nav>
+<!-- Side Navigation for Desktop View (Optional but defined in JSON) -->
+<div class="hidden lg:flex fixed left-0 top-0 h-full w-80 bg-zinc-950 border-r border-white/10 flex-col py-8 gap-4 shadow-2xl z-40 translate-x-[-100%] transition-transform">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full" data-alt="user avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqsf2aY_96RgR6GhrKd0ZV96lTGSRzTQeYNKsbhWRcXqbzbx7Wr4Jr67HNnGh89TAm8UDyJRRNZqbW6KnXHfh18smUQ0YFLkDOzIoR26kosKEUSFqQamSx7g6VlyVNoCsaygeKao6PrB-3XzaKygYMcVCozwYuHA_4jt23NfO9oo1GQ9liNxaE2ZOx-mHTJ5TcWtxF5bAL16YbbujgbSxPWo09m9XsL99KqhX4An5OWLx6l40U5AytIBkb7N0SW_cLG1_1gVjBVGVi"/>
+<div>
+<h4 class="font-sans text-sm font-bold text-white">Alex Rivera</h4>
+<p class="text-xs text-zinc-400">Verified Attendee</p>
+</div>
+</div>
+</div>
+<nav class="flex flex-col">
+<a class="flex items-center gap-4 px-6 py-4 text-zinc-400 hover:bg-white/5 transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-sans text-sm">Wallet Connect</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-zinc-400 hover:bg-white/5 transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-sans text-sm">Order History</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 bg-orange-500/10 text-orange-500 font-bold border-l-4 border-orange-500" href="#">
+<span class="material-symbols-outlined">swap_horiz</span>
+<span class="font-sans text-sm">Organizer Mode</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-zinc-400 hover:bg-white/5 transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-sans text-sm">Settings</span>
+</a>
+</nav>
+</div>
+</body></html>

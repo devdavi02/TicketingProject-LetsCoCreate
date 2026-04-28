@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Organizer Hub | SeatSavvy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ffb4ab",
+                    "on-secondary-container": "#00566b",
+                    "surface-container-highest": "#323538",
+                    "secondary": "#a6e6ff",
+                    "tertiary": "#c6c6c7",
+                    "background": "#111417",
+                    "outline": "#ab8980",
+                    "on-error": "#690005",
+                    "secondary-container": "#14d1ff",
+                    "inverse-surface": "#e1e2e7",
+                    "error-container": "#93000a",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-secondary": "#003543",
+                    "tertiary-fixed": "#e2e2e2",
+                    "tertiary-container": "#909191",
+                    "on-secondary-fixed": "#001f28",
+                    "on-primary-container": "#541200",
+                    "inverse-primary": "#b02f00",
+                    "on-background": "#e1e2e7",
+                    "surface-dim": "#111417",
+                    "surface-container-high": "#272a2e",
+                    "surface-bright": "#37393d",
+                    "secondary-fixed": "#b7eaff",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-primary": "#5f1500",
+                    "surface-container-lowest": "#0b0e11",
+                    "on-tertiary-container": "#282a2b",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "surface-tint": "#ffb5a0",
+                    "on-secondary-fixed-variant": "#004e60",
+                    "secondary-fixed-dim": "#4cd6ff",
+                    "primary-fixed-dim": "#ffb5a0",
+                    "on-surface-variant": "#e4beb4",
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#ff5722",
+                    "on-tertiary": "#2f3131",
+                    "surface-variant": "#323538",
+                    "outline-variant": "#5b4039",
+                    "on-primary-fixed-variant": "#862200",
+                    "primary": "#ffb5a0",
+                    "on-primary-fixed": "#3b0900",
+                    "surface-container-low": "#191c1f",
+                    "primary-fixed": "#ffdbd1",
+                    "on-surface": "#e1e2e7",
+                    "surface": "#111417",
+                    "inverse-on-surface": "#2e3134",
+                    "surface-container": "#1d2023"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "80px",
+                    "lg": "48px",
+                    "xs": "4px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "gutter": "16px",
+                    "margin": "20px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Inter"],
+                    "display": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-lg": ["14px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass {
+            background: rgba(17, 20, 23, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-zinc-950/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/10 shadow-none">
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<img alt="user profile picture" class="w-10 h-10 rounded-full border-2 border-primary-container" data-alt="close-up portrait of a professional male organizer in a clean modern studio with soft cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg9bSNcST1Un0EbB7Sct3pPiGXuq0Ty38F7AGGS5oD7ghhNuU83xman4VRBG8CraQvugbKWydymF0rLZ3H0bpBJPjmKsRJ3Nzlg2Dp5_RmMjIXF8ShNKWhfc9Q_Y2XpJBO6f3yoHcCaffdnbufBWngeZn42-PwJHQB1AHFk7-dxMJByyMYchYdrFIkc4oGQtJ35M93TcQoa_6IfBOZ4pZSVigyYBmgwWAgdTbcPYsLomosVG4ykd3Hafaf-YRv6iIOAV_pAt0DYsaO"/>
+<h1 class="text-xl font-black italic text-white tracking-tighter font-sans font-semibold tracking-tight">SeatSavvy</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary-container text-white px-4 py-2 rounded-lg font-label-lg flex items-center gap-2 hover:opacity-80 transition-all active:scale-95">
+<span class="material-symbols-outlined text-base">add</span>
+                    Criar
+                </button>
+<span class="material-symbols-outlined text-orange-500 cursor-pointer hover:bg-white/5 p-2 rounded-full transition-colors">notifications</span>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin pt-24 space-y-lg">
+<!-- Metrics Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="glass p-md rounded-xl relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary-container/10 blur-3xl rounded-full"></div>
+<p class="text-zinc-500 font-label-sm uppercase tracking-widest mb-base">GMV Total (R$)</p>
+<h3 class="text-headline-lg font-display text-white">R$ 142.580,00</h3>
+<div class="mt-sm flex items-center gap-1 text-secondary-container">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="text-label-sm">+12.4% este mês</span>
+</div>
+</div>
+<div class="glass p-md rounded-xl relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-secondary-container/10 blur-3xl rounded-full"></div>
+<p class="text-zinc-500 font-label-sm uppercase tracking-widest mb-base">Ingressos Vendidos</p>
+<h3 class="text-headline-lg font-display text-white">4.821</h3>
+<div class="mt-sm flex items-center gap-1 text-secondary-container">
+<span class="material-symbols-outlined text-sm">confirmation_number</span>
+<span class="text-label-sm">85% da meta</span>
+</div>
+</div>
+<div class="glass p-md rounded-xl relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary-container/10 blur-3xl rounded-full"></div>
+<p class="text-zinc-500 font-label-sm uppercase tracking-widest mb-base">Taxa de Check-in</p>
+<h3 class="text-headline-lg font-display text-white">92.4%</h3>
+<div class="mt-sm flex items-center gap-1 text-secondary-container">
+<span class="material-symbols-outlined text-sm">qr_code_scanner</span>
+<span class="text-label-sm">Tempo real</span>
+</div>
+</div>
+</section>
+<!-- Sales Chart -->
+<section class="glass p-md rounded-xl">
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h2 class="text-headline-md text-white font-headline-md">Vendas Diárias</h2>
+<p class="text-zinc-400 font-label-sm">Desempenho dos últimos 7 dias</p>
+</div>
+<button class="text-secondary-container font-label-lg flex items-center gap-base">
+                    Ver relatório completo
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="h-64 flex items-end justify-between gap-base md:gap-md px-base">
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-white/5 rounded-t-lg h-24 group-hover:bg-primary-container/40 transition-all duration-300"></div>
+<span class="mt-base text-label-sm text-zinc-500">Seg</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-white/5 rounded-t-lg h-32 group-hover:bg-primary-container/40 transition-all duration-300"></div>
+<span class="mt-base text-label-sm text-zinc-500">Ter</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-white/5 rounded-t-lg h-48 group-hover:bg-primary-container/40 transition-all duration-300"></div>
+<span class="mt-base text-label-sm text-zinc-500">Qua</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-white/5 rounded-t-lg h-40 group-hover:bg-primary-container/40 transition-all duration-300"></div>
+<span class="mt-base text-label-sm text-zinc-500">Qui</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-primary-container rounded-t-lg h-56 shadow-[0_0_20px_rgba(255,87,34,0.3)]"></div>
+<span class="mt-base text-label-sm text-primary-container font-bold">Sex</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-white/5 rounded-t-lg h-44 group-hover:bg-primary-container/40 transition-all duration-300"></div>
+<span class="mt-base text-label-sm text-zinc-500">Sab</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-white/5 rounded-t-lg h-28 group-hover:bg-primary-container/40 transition-all duration-300"></div>
+<span class="mt-base text-label-sm text-zinc-500">Dom</span>
+</div>
+</div>
+</section>
+<!-- Active Events List -->
+<section class="space-y-md">
+<div class="flex justify-between items-center">
+<h2 class="text-headline-md text-white font-headline-md">Eventos Ativos</h2>
+<div class="flex gap-sm">
+<span class="material-symbols-outlined p-2 glass rounded-lg cursor-pointer">filter_list</span>
+<span class="material-symbols-outlined p-2 glass rounded-lg cursor-pointer">search</span>
+</div>
+</div>
+<div class="space-y-sm">
+<!-- Event 1 -->
+<div class="glass p-sm rounded-xl flex flex-col md:flex-row items-center gap-md hover:bg-white/5 transition-all">
+<img alt="Cyber Techno Festival" class="w-full md:w-24 h-24 object-cover rounded-lg border border-white/10" data-alt="vibrant neon techno music festival with dark background and intense electric blue and orange stage lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSiHzl6DAZbNvIuBJL_UBaJkuTm-P9vsoGXHQHnz6VzmI6W6zOfZ6GXKOjwZ0s5kR6q9lhyQQo1dH6iWnafJuTCZXSCSIQ6s9mpFXlVBV4OBK4xjqKwEhb1csM-rm6DqwODu1fZEs24P9lEpV-I8OCXsaquZ6nAB5CJnwDlUFWWRFuhCvwxrARPjIoAX70AviiAnzNzndKSdSu0mMAUNEylF-NklIk5r3kVvH727__OJGC6v7eEd3iUyJB3bzedF5Wtd5-uqXmMY5A"/>
+<div class="flex-1 space-y-xs">
+<h4 class="text-body-lg font-bold text-white">Cyber Techno Festival 2024</h4>
+<div class="flex items-center gap-md">
+<span class="flex items-center gap-1 text-zinc-400 text-label-sm">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                                22 Out
+                            </span>
+<span class="flex items-center gap-1 text-zinc-400 text-label-sm">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                Arena Digital
+                            </span>
+<span class="px-2 py-0.5 bg-secondary-container/20 text-secondary-container text-[10px] font-bold rounded uppercase">Publicado</span>
+</div>
+</div>
+<div class="flex items-center gap-lg w-full md:w-auto justify-between md:justify-end">
+<div class="text-right hidden md:block">
+<p class="text-white font-bold">1.240 vls</p>
+<p class="text-zinc-500 text-label-sm">R$ 62.000</p>
+</div>
+<button class="border border-white/10 bg-white/5 hover:bg-white/10 px-6 py-2 rounded-lg font-label-lg transition-all w-full md:w-auto">Gerenciar</button>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="glass p-sm rounded-xl flex flex-col md:flex-row items-center gap-md hover:bg-white/5 transition-all">
+<img alt="Future Soul Night" class="w-full md:w-24 h-24 object-cover rounded-lg border border-white/10" data-alt="atmospheric soul music concert with warm golden backlighting and silhouettes of crowd in motion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnSQDVt09C4Yva7vYeIvGqKZkOw_k-ps22hjOLgMfWqPalOGkm4LJ36qRfTokChwk7Hm3wyO_IDtkTLEj0ch5Ueljb3L4xPET6S1jN1MktVZg7m0-E_YFbBy0-a4SMqB-D4GNG-JrkjRPjMJOGd1HfEt8CQFALDLKI7iOgvvbKH6R-IGWpha_Jkuhn94pNOUtHLQAI8mgxKhA7F8DEy0bq3l1JlGS3l6NGD3CbmMdEU56xYNyCjBW4VnAt9d1eu2SZsqPT-ONXHFUk"/>
+<div class="flex-1 space-y-xs">
+<h4 class="text-body-lg font-bold text-white">Future Soul Night</h4>
+<div class="flex items-center gap-md">
+<span class="flex items-center gap-1 text-zinc-400 text-label-sm">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                                15 Nov
+                            </span>
+<span class="flex items-center gap-1 text-zinc-400 text-label-sm">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                Sky Lounge
+                            </span>
+<span class="px-2 py-0.5 bg-orange-500/20 text-orange-500 text-[10px] font-bold rounded uppercase">Vendas Abertas</span>
+</div>
+</div>
+<div class="flex items-center gap-lg w-full md:w-auto justify-between md:justify-end">
+<div class="text-right hidden md:block">
+<p class="text-white font-bold">850 vls</p>
+<p class="text-zinc-500 text-label-sm">R$ 25.500</p>
+</div>
+<button class="border border-white/10 bg-white/5 hover:bg-white/10 px-6 py-2 rounded-lg font-label-lg transition-all w-full md:w-auto">Gerenciar</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- NavigationDrawer (Mobile/Desktop Hub) -->
+<aside class="hidden lg:flex fixed left-0 top-0 h-full w-80 bg-zinc-950 border-r border-white/10 shadow-2xl flex-col py-8 gap-4 z-40">
+<div class="px-6 mb-lg">
+<div class="flex items-center gap-4 mb-lg">
+<img alt="user avatar" class="w-12 h-12 rounded-full ring-2 ring-orange-500" data-alt="modern close-up professional profile headshot of a person with dark hair against a minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKBIO9xhEIZmM7H0a9T9d2WiagtenXc7k75tWzIZ3C8eQ93wBmBo1YIDeoIJwEOANOFIm5PvMqKgC_yS6BmzrpcD2o1jkLSlqtg0D89zP2z2PS9GczYNw-9AhYnuxYQsnbqb1C_gxZO0Tf35x_HfHMOIHvXty7RX4NXKLnqcQRMNuFXJkkuHRpr_O8f1uUgn3OqhpN4kfxrW9PJfXpPXpN1kXK3lH0QPHfatDh8m9XIf2iVDtC9r706Gl6H3JG2YEkPZJ_1n3IDFAd"/>
+<div>
+<h3 class="text-white font-bold font-sans text-sm">Alex Rivera</h3>
+<p class="text-zinc-400 text-xs">Verified Attendee</p>
+</div>
+</div>
+<p class="text-[10px] text-zinc-500 font-mono">0x71C...4f2</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="px-6 py-4 flex items-center gap-4 bg-orange-500/10 text-orange-500 font-bold border-l-4 border-orange-500 transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">dashboard_customize</span>
+<span class="font-sans text-sm">Organizer Mode</span>
+</a>
+<a class="px-6 py-4 flex items-center gap-4 text-zinc-400 hover:bg-white/5 transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-sans text-sm">Wallet Connect</span>
+</a>
+<a class="px-6 py-4 flex items-center gap-4 text-zinc-400 hover:bg-white/5 transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-sans text-sm">Order History</span>
+</a>
+<a class="px-6 py-4 flex items-center gap-4 text-zinc-400 hover:bg-white/5 transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-sans text-sm">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 bg-zinc-950/90 backdrop-blur-2xl border-t border-white/5 rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.5)] flex justify-around items-center px-4 pb-safe z-50">
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Tickets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Scanner</span>
+</a>
+<a class="flex flex-col items-center justify-center text-cyan-400 drop-shadow-[0_0_8px_rgba(0,209,255,0.5)] scale-110 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard_customize</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Hub</span>
+</a>
+</nav>
+</body></html>

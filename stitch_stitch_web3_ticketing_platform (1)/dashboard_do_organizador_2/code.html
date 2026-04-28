@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Organizer Hub | SeatSavvy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111417;
+            color: #e1e2e7;
+            margin: 0;
+            padding: 0;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(30, 32, 35, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-orange {
+            box-shadow: 0 0 20px rgba(255, 87, 34, 0.15);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "primary-container": "#ff5722",
+                        "surface-container": "#1d2023",
+                        "surface-container-lowest": "#0b0e11",
+                        "background": "#111417",
+                        "on-primary-fixed": "#3b0900",
+                        "surface-container-highest": "#323538",
+                        "primary": "#ffb5a0",
+                        "on-secondary-container": "#00566b",
+                        "outline": "#ab8980",
+                        "tertiary-container": "#909191",
+                        "on-primary": "#5f1500",
+                        "surface-bright": "#37393d",
+                        "on-primary-fixed-variant": "#862200",
+                        "secondary-container": "#14d1ff",
+                        "secondary-fixed": "#b7eaff",
+                        "on-background": "#e1e2e7",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "on-tertiary-container": "#282a2b",
+                        "surface-container-high": "#272a2e",
+                        "on-secondary": "#003543",
+                        "surface": "#111417",
+                        "secondary": "#a6e6ff",
+                        "surface-tint": "#ffb5a0",
+                        "on-primary-container": "#541200",
+                        "outline-variant": "#5b4039",
+                        "inverse-surface": "#e1e2e7",
+                        "surface-container-low": "#191c1f",
+                        "on-secondary-fixed": "#001f28",
+                        "secondary-fixed-dim": "#4cd6ff",
+                        "surface-variant": "#323538",
+                        "on-surface": "#e1e2e7",
+                        "inverse-on-surface": "#2e3134",
+                        "on-surface-variant": "#e4beb4",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffdbd1",
+                        "on-secondary-fixed-variant": "#004e60",
+                        "surface-dim": "#111417",
+                        "tertiary": "#c6c6c7",
+                        "inverse-primary": "#b02f00",
+                        "on-tertiary": "#2f3131"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-dim selection:bg-primary-container selection:text-white pb-32">
+<!-- TopAppBar (Medium variant for Organizer) -->
+<header class="bg-black/60 backdrop-blur-md sticky top-0 w-full z-40 border-b border-white/10 flex flex-col justify-center px-6 py-4 w-full">
+<div class="flex justify-between items-center max-w-7xl mx-auto w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-orange-500" data-icon="dashboard">dashboard</span>
+<span class="text-lg font-black text-white">Organizer Hub</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-white/40 font-black italic text-sm tracking-widest hidden md:block">SEATSAVVY</span>
+<button class="bg-primary-container text-white px-6 py-2 rounded-xl font-label-lg hover:brightness-110 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                    Create
+                </button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-8 space-y-8">
+<!-- Welcome Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-white">Dashboard Overview</h1>
+<p class="font-body-md text-body-md text-neutral-400">Welcome back. Your events are performing 12% better this week.</p>
+</div>
+<div class="flex gap-2 bg-surface-container rounded-lg p-1">
+<button class="px-4 py-2 rounded-md bg-surface-container-highest text-white font-label-sm">Daily</button>
+<button class="px-4 py-2 rounded-md text-neutral-500 font-label-sm">Weekly</button>
+<button class="px-4 py-2 rounded-md text-neutral-500 font-label-sm">Monthly</button>
+</div>
+</section>
+<!-- Metric Cards Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- GMV -->
+<div class="glass-card p-6 rounded-3xl relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary-container/10 rounded-full blur-3xl group-hover:bg-primary-container/20 transition-all"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-orange-500 bg-orange-500/10 p-2 rounded-xl" data-icon="payments">payments</span>
+<span class="text-secondary font-label-sm flex items-center gap-1">+8.4% <span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span></span>
+</div>
+<h3 class="font-label-lg text-neutral-400 uppercase tracking-widest text-[10px]">Gross Merchandise Value</h3>
+<p class="font-display text-headline-lg text-white mt-1">$142,850</p>
+</div>
+<!-- Tickets Sold -->
+<div class="glass-card p-6 rounded-3xl relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-secondary-container/10 rounded-full blur-3xl group-hover:bg-secondary-container/20 transition-all"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary bg-secondary/10 p-2 rounded-xl" data-icon="confirmation_number">confirmation_number</span>
+<span class="text-secondary font-label-sm flex items-center gap-1">+12.1% <span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span></span>
+</div>
+<h3 class="font-label-lg text-neutral-400 uppercase tracking-widest text-[10px]">Total Tickets Sold</h3>
+<p class="font-display text-headline-lg text-white mt-1">2,482</p>
+</div>
+<!-- Check-in Progress -->
+<div class="glass-card p-6 rounded-3xl relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-white/5 rounded-full blur-3xl"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-white bg-white/10 p-2 rounded-xl" data-icon="how_to_reg">how_to_reg</span>
+<span class="text-neutral-500 font-label-sm">Active Now</span>
+</div>
+<h3 class="font-label-lg text-neutral-400 uppercase tracking-widest text-[10px]">Check-in Progress</h3>
+<div class="flex items-center gap-4 mt-1">
+<p class="font-display text-headline-lg text-white">68%</p>
+<div class="flex-grow h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[68%] shadow-[0_0_10px_#ff5722]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Chart & Activity Bento -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Sales Chart (Simplified for UI representation) -->
+<div class="lg:col-span-2 glass-card p-6 rounded-3xl min-h-[350px] flex flex-col">
+<div class="flex justify-between items-center mb-8">
+<h2 class="font-headline-md text-white">Sales Velocity</h2>
+<span class="material-symbols-outlined text-neutral-500 cursor-pointer" data-icon="more_horiz">more_horiz</span>
+</div>
+<div class="flex-grow flex items-end gap-2 pb-2">
+<!-- Simplified Bar/Line hybrid representation -->
+<div class="flex-grow bg-primary-container/5 h-24 rounded-t-lg relative group">
+<div class="absolute bottom-0 w-full bg-primary-container/20 h-1/2 group-hover:h-3/4 transition-all duration-500 rounded-t-lg"></div>
+</div>
+<div class="flex-grow bg-primary-container/5 h-32 rounded-t-lg relative group">
+<div class="absolute bottom-0 w-full bg-primary-container/20 h-2/3 group-hover:h-5/6 transition-all duration-500 rounded-t-lg"></div>
+</div>
+<div class="flex-grow bg-primary-container/5 h-48 rounded-t-lg relative group">
+<div class="absolute bottom-0 w-full bg-primary-container/40 h-3/4 group-hover:h-full transition-all duration-500 rounded-t-lg"></div>
+</div>
+<div class="flex-grow bg-primary-container/5 h-40 rounded-t-lg relative group">
+<div class="absolute bottom-0 w-full bg-primary-container/30 h-1/2 group-hover:h-2/3 transition-all duration-500 rounded-t-lg"></div>
+</div>
+<div class="flex-grow bg-primary-container/5 h-56 rounded-t-lg relative group">
+<div class="absolute bottom-0 w-full bg-primary-container/60 h-4/5 group-hover:h-full transition-all duration-500 rounded-t-lg"></div>
+</div>
+<div class="flex-grow bg-primary-container/5 h-64 rounded-t-lg relative group">
+<div class="absolute bottom-0 w-full bg-primary-container h-[90%] group-hover:h-full transition-all duration-500 rounded-t-lg shadow-[0_-5px_15px_rgba(255,87,34,0.3)]"></div>
+</div>
+</div>
+<div class="flex justify-between mt-4 font-label-sm text-neutral-500">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+</div>
+</div>
+<!-- Secondary Bento: Recent Activity -->
+<div class="glass-card p-6 rounded-3xl flex flex-col">
+<h2 class="font-headline-md text-white mb-6">Recent Sales</h2>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="portrait of a young man with a friendly expression and short dark hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvQCkfU4LtSIn9_2HorneAchVpuobkReOla6ksOrRFLOVCAbZBLOmqO9vdp2DhT_adFENnVjhJDn789X5Yh_hfcajGJqmOhnpQTg7-jHfm4qA2JWWvCHEvMvmi-M36ZQP1pN5GDRzAeKaS3Xt-mwOQmJpKJ5LJpRoQjR2LKzW6BNRAgfq9yU0a0g-FsjgzE0UsGsXdEA24PZRKcV8CJWyS7pecxSTeEtwvzNkIN4E7gYIyF83GctZtYsacmK45JrutfKO_5Ne3tTfu"/>
+</div>
+<div class="flex-grow">
+<p class="font-label-lg text-white">Alex Rivera</p>
+<p class="text-[10px] text-neutral-500 uppercase tracking-tighter">VIP Pass - Neon Jungle</p>
+</div>
+<span class="font-label-lg text-secondary">+$240</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a woman smiling with curly brown hair in soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlSDTP1J7mI2eq9DiJGcZTRpAUzaIWWvoka-Q6wBo_dwrRmM5_Ugi3A1hdkzTva1JqKtom4CEm-qAZJUtYbV4G9-SieU9Lp6XfILh0kdLMDiu5Nm8uZz3wYvvlmVePpPq2iPnOh97_a3FpUGGrDlxkV_SmR7CY8Ttr4NF_uEw7lB59yVLddo42ReFNJPAzkmuannrqJlbv7ORgSKxpxBq2wkaJtfXtPb4-PtIUvxzEbztcaQjsoIin7YKvcABaz1C2k-h0cuOAPCpQ"/>
+</div>
+<div class="flex-grow">
+<p class="font-label-lg text-white">Sarah Chen</p>
+<p class="text-[10px] text-neutral-500 uppercase tracking-tighter">GA Ticket - Summer Fest</p>
+</div>
+<span class="font-label-lg text-secondary">+$85</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="headshot of a man with spectacles and a thoughtful expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx5SB-S4Swa5wlQJ6SS59zUv-vKZjLPe3NH4AeGYzvAWiV3ffly2xuQ_O-xUNSPSNN7V0NzSSMuwVWnm2zbEoyJus5IBEw0xzu-8sT-85Y9oCev9HXlJw6WXZAMB0eKhx2pv3eR8WL9cKKYzv1ipzTEmcOXlTeKglS8fkSYFWEEgyoIlMfJNvEZXPLTbFCgkdWDx1PkAoMtLe6KJ5GTaYb3hmR2icHRuT4SpxAn_QzQH224_XCMzr2CHNUiQMpCIqJ2rWj5vyHggj5"/>
+</div>
+<div class="flex-grow">
+<p class="font-label-lg text-white">Marcus Vogt</p>
+<p class="text-[10px] text-neutral-500 uppercase tracking-tighter">Early Bird - Techno Loft</p>
+</div>
+<span class="font-label-lg text-secondary">+$45</span>
+</div>
+</div>
+<button class="mt-auto w-full py-3 rounded-xl border border-white/10 text-neutral-400 font-label-sm hover:bg-white/5 transition-all">View All Transactions</button>
+</div>
+</section>
+<!-- Active Events List -->
+<section class="space-y-6">
+<div class="flex justify-between items-center">
+<h2 class="font-headline-md text-white">Active Events</h2>
+<button class="text-orange-500 font-label-lg flex items-center gap-1">See All <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span></button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Event Card 1 -->
+<div class="glass-card p-4 rounded-3xl flex items-center gap-4 group hover:border-orange-500/30 transition-all cursor-pointer">
+<div class="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="vibrant dj performance at night with purple and blue stage lights and silhouette of crowd" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy9A-6ck8ibLBjxsJuZIKeIKkR_ecCc6BXc44DVC0DRONnEzu_ONxevjyu8vp4IRvjpGRfmbY7qLfIS_-I0GWWa796NNUqdmtrZ1nIEb-aPuGHuMJK1YTzKzmdLQ6Owkaw9wK3ufxCpVIN9agGGs1onAjpLPqDotImKVQNsr_LqQjxaQC0-WoCu4oONO6kyEX4-mZdQMuAoN_RQxWNivnf46ZjxIzqxZ59ANbYyRaU2GCHbX1My5UoZA0gs0ah3DCO7cVR_jXF-pRu"/>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold text-orange-500 bg-orange-500/10 px-2 py-0.5 rounded-full uppercase tracking-widest mb-1 inline-block">Trending</span>
+<span class="text-neutral-500 text-[10px]">Aug 24, 2024</span>
+</div>
+<h4 class="font-label-lg text-white truncate">Neon Jungle: After Hours</h4>
+<div class="flex items-center gap-4 mt-2">
+<div class="text-[11px] text-neutral-400">
+<span class="block font-bold text-white">842/1000</span>
+                                Sold
+                            </div>
+<div class="text-[11px] text-neutral-400">
+<span class="block font-bold text-white">$42.1k</span>
+                                Revenue
+                            </div>
+</div>
+</div>
+<button class="p-3 rounded-2xl bg-white/5 text-white hover:bg-orange-500 hover:text-white transition-all shrink-0">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<!-- Event Card 2 -->
+<div class="glass-card p-4 rounded-3xl flex items-center gap-4 group hover:border-orange-500/30 transition-all cursor-pointer">
+<div class="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="large outdoor concert stage with dramatic lighting and a massive energetic crowd under the night sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm6-9pwNd3HAq2PEn1keQiz_2u6_wTcu8y3l6uWH-2QbQK3LSgy-FpVQ2Z5ML2_qvOU_Ik1AFBTXVLUS_7kY2Z5odsaiK6sZO1wxx1XsJ6SYGPe7ltucYlfLX7-mwpyPZOjj_PEknDCpy6kbX3IwWcrL0FDGiQBEVQlWyFR9V3sAreFsPfGypb8PP8u7CzhXsx4C--DKV4ZyRpBef4GEQzmJu1EpNnVW6jZgDMICHQPEI69DTBlG1SeATghL8dd7H0prvt1wODy9RP"/>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold text-secondary bg-secondary/10 px-2 py-0.5 rounded-full uppercase tracking-widest mb-1 inline-block">Active</span>
+<span class="text-neutral-500 text-[10px]">Sep 02, 2024</span>
+</div>
+<h4 class="font-label-lg text-white truncate">Summer Solstice Fest</h4>
+<div class="flex items-center gap-4 mt-2">
+<div class="text-[11px] text-neutral-400">
+<span class="block font-bold text-white">1.2k/5.0k</span>
+                                Sold
+                            </div>
+<div class="text-[11px] text-neutral-400">
+<span class="block font-bold text-white">$102.5k</span>
+                                Revenue
+                            </div>
+</div>
+</div>
+<button class="p-3 rounded-2xl bg-white/5 text-white hover:bg-orange-500 hover:text-white transition-all shrink-0">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Contextual FAB (Customized for Creator focus) -->
+<div class="fixed bottom-24 right-6 z-50">
+<button class="w-16 h-16 rounded-full bg-primary-container text-on-primary shadow-2xl shadow-orange-500/40 flex items-center justify-center hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="add" style="font-variation-settings: 'FILL' 0, 'wght' 700;">add</span>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 border-t border-white/10 rounded-t-3xl bg-neutral-900/90 backdrop-blur-2xl flex justify-around items-center h-20 pb-4 px-6 md:hidden">
+<div class="flex flex-col items-center justify-center text-cyan-400 drop-shadow-[0_0_8px_rgba(0,209,255,0.6)]">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] uppercase tracking-widest font-bold">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-500">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="text-[10px] uppercase tracking-widest font-bold">Events</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-500">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[10px] uppercase tracking-widest font-bold">Reports</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-500">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="text-[10px] uppercase tracking-widest font-bold">Profile</span>
+</div>
+</nav>
+<!-- Tablet/Desktop Navigation Anchor (Hidden on mobile) -->
+<div class="hidden md:flex fixed bottom-0 w-full justify-center pb-8 pointer-events-none">
+<div class="glass-card px-8 py-3 rounded-full flex gap-8 pointer-events-auto border border-white/5">
+<a class="flex items-center gap-2 text-cyan-400 font-label-lg transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="dashboard">dashboard</span> Dashboard
+            </a>
+<a class="flex items-center gap-2 text-neutral-400 font-label-lg hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="confirmation_number">confirmation_number</span> Events
+            </a>
+<a class="flex items-center gap-2 text-neutral-400 font-label-lg hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="analytics">analytics</span> Analytics
+            </a>
+<a class="flex items-center gap-2 text-neutral-400 font-label-lg hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="account_circle">account_circle</span> Settings
+            </a>
+</div>
+</div>
+</body></html>
