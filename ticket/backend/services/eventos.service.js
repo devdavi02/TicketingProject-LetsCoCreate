@@ -1,27 +1,26 @@
-const { criarEvento } = require('../models/evento.model');
 
-let eventos = [
-  {
-    id: "1",
-    nome: "Festa Universitária",
-    data: "2026-05-10",
-    preco: 50
-  }
-];
+async function listarEventos() {
+  const { data, error } = await supabase
+    .from('eventos')
+    .select('*');
 
-function listarEventos() {
-  return eventos;
+  if (error) throw error;
+
+  return data;
 }
 
-function criarEventoService(dados) {
-  const novoEvento = criarEvento(dados);
+async function criarEvento({ nome, data, preco }) {
+  const { data: evento, error } = await supabase
+    .from('eventos')
+    .insert([{ nome, data, preco }])
+    .select();
 
-  eventos.push(novoEvento);
+  if (error) throw error;
 
-  return novoEvento;
+  return evento[0];
 }
 
 module.exports = {
   listarEventos,
-  criarEvento: criarEventoService
+  criarEvento
 };
